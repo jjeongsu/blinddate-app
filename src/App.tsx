@@ -1,33 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useRecoilValue } from "recoil";
+import { loginState } from "./atom";
+import Home from "./Pages/Home";
+import SignUp from "./Pages/SignUp";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+//로그인 되었을 경우에만 보이는 화면
+  const isLogIn = useRecoilValue(loginState);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      { isLogIn ? <Home /> : <SignUp />}
     </>
   )
 }
