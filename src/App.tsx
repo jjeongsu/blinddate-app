@@ -2,13 +2,13 @@ import { useRecoilValue } from "recoil";
 import { loginState } from "./atom";
 import Home from "./Pages/Home";
 import SignUp from "./Pages/SignUp";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router";
 
 function App() {
-//로그인 되었을 경우에만 보이는 화면
-  const isLogIn = useRecoilValue(loginState);
   return (
     <>
-      { isLogIn ? <Home /> : <SignUp />}
+      <RouterProvider router={router} />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 interface userInfo {
   userId : string,
@@ -10,6 +11,7 @@ interface userInfo {
 const BASEURL =  'http://52.79.226.246';
 function SignUp(){
   const {register, handleSubmit, setValue} =useForm();
+  const navigate = useNavigate();
   //id, password, nickname
   const handleValid = (e:any) => {
     //do something
@@ -28,7 +30,7 @@ function SignUp(){
       console.log(res.status);
     });
     //navigation으로 mainpage로 넘어가기
-    
+    navigate('/');
   }
 
   return (
@@ -95,12 +97,12 @@ function SignUp(){
 }
 export default SignUp;
 
-const InputLabel = styled.p`
+export const InputLabel = styled.p`
   font-size: 15px;
   margin-left: 5px;
   margin-bottom: 0px;
 `
-const Input = styled.input`
+export const Input = styled.input`
   border : 1px solid #3d8bfe;
   border-radius: 2px;
   width: 250px;
@@ -110,12 +112,12 @@ const Input = styled.input`
     background-color: aliceblue;
   }
 ` ;
-const Form = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
 `
-const FormContainer = styled.div`
+export const FormContainer = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -123,13 +125,14 @@ const FormContainer = styled.div`
   align-items: center;
   margin: auto;
 `
-const Button = styled.button`
+export const Button = styled.button`
+  width: 250px;
   background-color: #a8bdf5;
   margin: 10px 0px;
   &:hover {
     cursor: pointer;
   }
 `
-const FormHeader = styled.h1`
+export const FormHeader = styled.h1`
   font-size: 25px;
 `
