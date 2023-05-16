@@ -8,7 +8,7 @@ interface userInfo {
   password: string, 
   nickname: string,
 };
-const BASEURL =  'http://52.79.226.246';
+export const BASEURL =  'http://52.79.226.246';
 function SignUp(){
   const {register, handleSubmit, setValue} =useForm();
   const navigate = useNavigate();

@@ -12,8 +12,15 @@ function Header(){
 export default Header;
 
 const HeaderContainer = styled.div`
-  
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
 `;
 const Logo = styled.h1`
-  
+  height: inherit;
+  margin: 0;
 `;
