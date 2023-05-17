@@ -1,22 +1,28 @@
+import { useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 function TabBar(){
+  const navigate = useNavigate();
   return(
   <TabContainer>
     <li>
       <Tab
+        onClick={()=> navigate('/list')}
         aria-label="좋아요 누른 목록"
         >좋아요
       </Tab>
     </li>
     <li>
       <Tab
+      onClick={()=> navigate('/home')}
         aria-label="메인화면"
       >홈 
       </Tab>
     </li>
     <li>
-      <Tab aria-label="마이페이지 상세정보 설정" 
+      <Tab 
+      onClick={()=> navigate('/mypage')}
+      aria-label="마이페이지 상세정보 설정" 
       >마이페이지</Tab></li>
   </TabContainer>
 )}
