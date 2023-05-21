@@ -25,7 +25,7 @@ const Modal = ( {setModalOpen}: ISetState) =>{
     .then(function(res){
       console.log(res.status);
     });
-    // setModalOpen(false);
+    setModalOpen(false);
   }
   return(
     <>
