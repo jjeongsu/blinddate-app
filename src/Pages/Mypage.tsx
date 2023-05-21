@@ -7,6 +7,7 @@ import axios from "axios";
 import { useRecoilValue } from "recoil";
 import { userInfo } from "../atom";
 import { useNavigate } from "react-router-dom";
+import Modal from "../Components/Modal";
 interface IUser {
   nickname: string,
   profileImgUrl: string,
@@ -16,6 +17,7 @@ function Mypage(){
   const navigate = useNavigate();
   const userToken= useRecoilValue(userInfo);
   const [user, setUser]= useState<IUser>();
+  const [isModalOpen, setModalOpen] = useState<boolean>(false);
   const setInitialUserInfo = async() => {
     const response = await axios.get(`${BASEURL}/auth/user`,
     {
@@ -23,6 +25,9 @@ function Mypage(){
     });
     console.log(response.data);
     setUser({...response.data});
+  }
+  const handleEditClick = () => {
+    setModalOpen(true);
   }
   useEffect(()=>{
     setInitialUserInfo();
@@ -32,12 +37,23 @@ function Mypage(){
     <>
       <Header />
       <MypageContainer >
-        <UserImg src={user?.profileImgUrl}/>
-        <p> {user?.nickname}</p>
-        <Button onClick={()=>{navigate('/list/receive')}}> 나를 좋아한 사람 </Button>
+        <UserProfile>
+          {/* <UserImg src={user?.profileImgUrl}/> */}
+          <UserImg />
+          <div>
+            <span> {user?.nickname}</span>
+            <EditBtn onClick = {handleEditClick}>수정하기</EditBtn>
+          </div>
+        </UserProfile>
         <Button onClick={()=>{navigate('/list/send')}}> 내가 좋아한 사람 </Button>
+        <Button onClick={()=>{navigate('/list/receive')}}> 나를 좋아한 사람 </Button>
       </MypageContainer>
       <TabBar />
+      {
+        isModalOpen && (
+          <Modal setModalOpen ={setModalOpen}/>
+        )
+      }
     </>
   )
 }
@@ -54,4 +70,11 @@ const UserImg = styled.img`
   width: 200px;
   height: 200px;
   background-color: aliceblue;
+`
+const UserProfile= styled.div`
+`;
+const EditBtn = styled.button`
+  width: 100px;
+  font-size: 10px;
+  margin-left: 50px;
 `

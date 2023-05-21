@@ -115,7 +115,7 @@ export const Input = styled.input`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-
+  height: inherit;
 `
 export const FormContainer = styled.div`
   width: 100vw;
