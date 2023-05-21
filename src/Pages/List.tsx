@@ -4,6 +4,7 @@ import TabBar from "../Components/TabBar";
 import { styled } from "styled-components";
 
 function List(){
+  //탭 isActive 프롭 추가하기
   return(
     <>
       <Header />

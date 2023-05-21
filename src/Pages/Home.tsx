@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useRecoilValue } from "recoil";
 import { userInfo } from "../atom";
-interface IMember {
+export interface IMember {
   userId: string,
   nickname: string,
   profileImgUrl: string,
