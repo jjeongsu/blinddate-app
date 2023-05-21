@@ -10,7 +10,7 @@ import { RecoilRoot } from 'recoil'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <RecoilRoot>
-      <App />
+      <RouterProvider router={router} />
     </RecoilRoot>
   </React.StrictMode>,
 )
