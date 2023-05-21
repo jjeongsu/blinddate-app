@@ -1,16 +1,11 @@
 import axios from "axios";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-interface userInfo {
-  userId : string,
-  password: string, 
-  nickname: string,
-};
+
 export const BASEURL =  'http://52.79.226.246';
 function SignUp(){
-  const {register, handleSubmit, setValue} =useForm();
+  const {register, handleSubmit} =useForm();
   const navigate = useNavigate();
   //id, password, nickname
   const handleValid = (e:any) => {

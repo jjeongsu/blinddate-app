@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import { styled } from "styled-components";
-import { BASEURL, Form, Input } from "../Pages/SignUp";
+import { BASEURL, Form, } from "../Pages/SignUp";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
@@ -10,9 +10,7 @@ interface ISetState {
 
 const Modal = ( {setModalOpen}: ISetState) =>{
   const {register, handleSubmit} =  useForm();
-  const handleClick = () => {
-    setModalOpen( false);
-  }
+
   const handleValid = (e:any) => {
     console.log(e.nickname);
     axios({

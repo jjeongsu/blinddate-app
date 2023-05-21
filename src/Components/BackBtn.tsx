@@ -1,9 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { styled } from "styled-components";
 
 function BackBtn(){
   const navigation = useNavigate();
-  const handleClick = (e: any) => {
+  const handleClick = ( ) => {
     navigation(-1);
   }
   return(

@@ -30,6 +30,7 @@ function Home(){
   },[]);
   console.log("받아온 멤버리스트", memberList);
   function handleDislike(e: React.MouseEvent<HTMLButtonElement>): void {
+    console.log(e);
     const response = axios.patch(
       `${BASEURL}/affinity/dislike`,
       { 
@@ -40,12 +41,14 @@ function Home(){
     setMListIndex(prev => prev+1);
   }
   function handleLike(e: React.MouseEvent<HTMLButtonElement>): void {
+    console.log(e);
     const response = axios.patch(
       `${BASEURL}/affinity/like`,
       { 
         headers: {authorization: userToken.accessToken},
         data : {targetUserId : memberList[mListIndex].userId}
       });
+      console.log(response);
     setMListIndex(prev => prev+1);
   }
 

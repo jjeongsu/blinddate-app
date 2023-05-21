@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Button, Form, FormContainer, FormHeader, Input, InputLabel } from "./SignUp";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSetRecoilState } from "recoil";
 import { loginState, userInfo } from "../atom";
