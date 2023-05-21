@@ -1,6 +1,7 @@
 {
   "name": "blind-date-app",
   "private": true,
+  "homepage": "https://jjeongsu.github.io/blinddate-app/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
