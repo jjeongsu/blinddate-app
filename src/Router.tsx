@@ -10,7 +10,7 @@ import Send from "./Components/Send";
 
 const router = createBrowserRouter([
   {
-    path:"/",
+    path:"",
     element: <LogIn />, 
     errorElement: <Error />
   },
