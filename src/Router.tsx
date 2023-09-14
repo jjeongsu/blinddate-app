@@ -1,48 +1,48 @@
-import { createBrowserRouter } from "react-router-dom";
-import Home from "./Pages/Home";
-import LogIn from "./Pages/LogIn";
-import SignUp from "./Pages/SignUp";
-import Mypage from "./Pages/Mypage";
-import List from "./Pages/List";
-import Error from  "./Components/Error";
-import Receive from "./Components/Receive";
-import Send from "./Components/Send";
+import { createBrowserRouter } from 'react-router-dom'
+import Home from './Pages/Home'
+import LogIn from './Pages/LogIn'
+import SignUp from './Pages/SignUp'
+import Mypage from './Pages/Mypage'
+import List from './Pages/List'
+import Error from './Components/Error'
+import Receive from './Components/Receive'
+import Send from './Components/Send'
 
 const router = createBrowserRouter([
   {
-    path:`${process.env.PUBLIC_URL}/`,
-    element: <LogIn />, 
-    errorElement: <Error />
+    path: `${process.env.PUBLIC_URL}/`,
+    element: <LogIn />,
+    errorElement: <Error />,
   },
   {
-    path: "/signup",
+    path: '/signup',
     element: <SignUp />,
-    errorElement: <Error />
+    errorElement: <Error />,
   },
   {
-    path:"/home",
+    path: '/home',
     element: <Home />,
-    errorElement: <Error />
+    errorElement: <Error />,
   },
   {
-    path: "/mypage",
+    path: '/mypage',
     element: <Mypage />,
-    errorElement: <Error />
+    errorElement: <Error />,
   },
   {
-    path: "/list",
+    path: '/list',
     element: <List />,
     children: [
       {
-        path: "send",
-        element: <Send />
+        path: 'send',
+        element: <Send />,
       },
       {
-        path: "receive",
-        element: <Receive />
-      }
+        path: 'receive',
+        element: <Receive />,
+      },
     ],
-    errorElement: <Error />
-  }
-]);
-export default router;
+    errorElement: <Error />,
+  },
+])
+export default router
